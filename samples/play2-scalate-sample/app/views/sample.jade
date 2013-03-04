@@ -1,0 +1,17 @@
+!!!
+-@ val values:List[Map[String,String]]
+html
+  head
+    title Sample template with Jade
+  body
+    table
+      thead
+        tr
+          th Name
+          th Email
+      tbody
+      - for(person <- values)
+        tr
+          td= person("name")
+          td
+            a(href={"mailto:"+person("email")}) #{person("email")}

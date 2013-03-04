@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sample template with mustache</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{#values}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td><a href="mailto:{{email}}">{{email}}</a></td>
+                </tr>
+            {{/values}}
+            </tbody>
+        </table>
+    </body>
+</html>

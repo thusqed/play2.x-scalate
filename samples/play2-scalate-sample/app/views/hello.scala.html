@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Play2-scalate sample application</title>
+</head>
+<body>
+<h1>Sample views using scalate templates</h1>
+<ul>
+    <li>
+        <h2>Jade</h2>
+        <div>Use ".jade" extention to views filename</div>
+        <a href="@routes.Application.renderWithTemplate("jade")">Test here</a>
+        <pre>
+            !!!
+            -@@ val values:List[Map[String,String]]
+            html
+              head
+                title Sample template with Jade
+              body
+                table
+                  thead
+                    tr
+                      th Name
+                      th Email
+                  tbody
+                  - for(person <- values)
+                    tr
+                      td= person("name")
+                      td
+                        a(href={"mailto:"+person("email")}) #{person("email")}
+        </pre>
+    </li>
+    <li>
+        <h2>Mustache</h2>
+        <div>Use ".mustache" extention to views filename</div>
+        <a href="@routes.Application.renderWithTemplate("mustache")">Test here</a>
+        <pre>
+            @("""
+            <!DOCTYPE html>
+
+            <html>
+            <head>
+                <title>Sample template with mustache</title>
+            </head>
+            <body>
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#values}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td><a href="mailto:{{email}}">{{email}}</a></td>
+                </tr>
+                {{/values}}
+                </tbody>
+            </table>
+            </body>
+            </html>
+            """)
+        </pre>
+    </li>
+    <li>
+        <h2>Scaml</h2>
+        <div>Use ".scaml" extention to views filename</div>
+        <a href="@routes.Application.renderWithTemplate("scaml")">Test here</a>
+        <pre>
+            !!!
+            -@@ val values:List[Map[String,String]]
+            %html
+              %head
+                %title Sample template with Scaml
+              %body
+                %table
+                  %thead
+                    %tr
+                      %th Name
+                      %th Email
+                  %tbody
+                  - for(person <- values)
+                    %tr
+                      %td= person("name")
+                      %td
+                        %a{:href=>{"mailto:"+person("email")}} #{person("email")}
+        </pre>
+    </li>
+</ul>
+</body>
+</html>
