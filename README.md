@@ -2,7 +2,7 @@
 
 ### About
 
-A very simple [play 2.0](http://www.playframework.org) plugin for using scalate templates as view rendering in play 2.0.
+A very simple [play 2.1](http://www.playframework.org) plugin for using scalate templates as view rendering in play 2.0.
 
 For more information, see [Scalate](http://scalate.fusesource.org/)
 
