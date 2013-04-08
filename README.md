@@ -19,7 +19,7 @@ Tested scalate templates :
 * Clone this repository  
 
 ```
-git clone git@github.com:adetante/play2-scalate.git
+git clone git://github.com/thusqed/play2.x-scalate.git
 ```
 * Build and publish the plugin to your local repository 
 
